@@ -8,7 +8,6 @@ import static com.github.DimaKrasav4eg.questmaster.command.CommandsInfo.START;
 
 public class StartCommand implements Command {
 
-    private final static String HELLO_MESSAGE = "Hi! I help you remember your tasks. ";
     private final SendBotMessageService sendBotMessageService;
 
     public StartCommand(SendBotMessageService sendBotMessageService){

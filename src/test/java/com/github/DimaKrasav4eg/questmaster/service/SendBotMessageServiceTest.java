@@ -7,8 +7,6 @@ import org.mockito.Mockito;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class SendBotMessageServiceTest {
     private SendBotMessageService sendBotMessageService;
     private QuestMasterBot questMasterBot;
