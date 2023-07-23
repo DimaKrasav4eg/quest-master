@@ -3,6 +3,7 @@ package com.github.DimaKrasav4eg.questmaster.tgbot;
 import com.github.DimaKrasav4eg.questmaster.command.CommandContainer;
 import com.github.DimaKrasav4eg.questmaster.service.SendBotMessageServiceImpl;
 import com.github.DimaKrasav4eg.questmaster.tgbot.config.BotConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -16,7 +17,6 @@ public class QuestMasterBot extends TelegramLongPollingBot {
 
     private final BotConfig botConfig;
     private final CommandContainer commandContainer;
-
 
     public QuestMasterBot(BotConfig botConfig){
         this.botConfig = botConfig;
