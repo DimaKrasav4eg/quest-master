@@ -1,10 +1,26 @@
 version: '3.8'
-
 services:
   qmtb:
     build:
       context: .
     environment:
-      - BOT_NAME=${BOT_NAME}
-      - BOT_TOKEN=${BOT_TOKEN}
-#    restart: always
+      BOT_NAME: ${BOT_NAME}
+      BOT_TOKEN: ${BOT_TOKEN}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    #    restart: always
+    depends_on:
+      - qmtb-db
+  qmtb-db:
+    image: mysql:8.0
+    container_name: qmtb-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'qmtb-db'
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
