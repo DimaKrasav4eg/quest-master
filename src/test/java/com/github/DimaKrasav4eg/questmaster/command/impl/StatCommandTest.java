@@ -3,23 +3,22 @@ package com.github.DimaKrasav4eg.questmaster.command.impl;
 import com.github.DimaKrasav4eg.questmaster.command.AbstractCommandTest;
 import com.github.DimaKrasav4eg.questmaster.command.Command;
 
-import static com.github.DimaKrasav4eg.questmaster.command.CommandsInfo.STOP;
+import static com.github.DimaKrasav4eg.questmaster.command.CommandsInfo.STAT;
 
-class StopCommandTest extends AbstractCommandTest {
+class StatCommandTest extends AbstractCommandTest {
 
     @Override
     protected Command getCommand() {
-        return new StopCommand(sendBotMessageService, userService);
+        return new StatCommand(this.sendBotMessageService, this.userService);
     }
-
 
     @Override
     protected String getCommandName() {
-        return STOP.getCommandName();
+        return STAT.getCommandName();
     }
 
     @Override
     protected String getCommandMessage() {
-        return STOP.getReplyMessage();
+        return String.format(STAT.getReplyMessage(), 0);
     }
 }

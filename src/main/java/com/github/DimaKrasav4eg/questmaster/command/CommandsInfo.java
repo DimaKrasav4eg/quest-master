@@ -12,7 +12,8 @@ public enum CommandsInfo {
             %s - restart bot
             %s - stop bot
             %s - get help
-            """, START.getCommandName(), STOP.getCommandName(), "/help"));
+            """, START.getCommandName(), STOP.getCommandName(), "/help")),
+    STAT("/stat", "This boе used by %s persons");
 
     private final String commandName;
     private final String replyMessage;

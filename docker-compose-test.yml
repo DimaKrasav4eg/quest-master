@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  test-qmtb-db:
+    image: mysql:8.0
+    container_name: test-qmtb-db
+#    restart: always
+    environment:
+      MYSQL_DATABASE: 'test-qmtb-db'
+      MYSQL_USER: 'qaqtus'
+      MYSQL_PASSWORD: 'qaqtus'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - test-qmtb-net
+networks:
+  test-qmtb-net:
+    driver: bridge
